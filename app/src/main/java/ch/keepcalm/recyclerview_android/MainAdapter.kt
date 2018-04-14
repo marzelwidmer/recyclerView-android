@@ -9,7 +9,7 @@ class MainAdapter : RecyclerView.Adapter<CustomerViewHolder>() {
 
     // number of items
     override fun getItemCount(): Int {
-        return 3
+        return 4
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomerViewHolder {
