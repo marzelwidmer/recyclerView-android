@@ -8,9 +8,11 @@ import kotlinx.android.synthetic.main.video_row.view.*
 
 class MainAdapter : RecyclerView.Adapter<CustomerViewHolder>() {
 
+    val videoTitles = arrayListOf("1st Title" , "2nd Title", "3rd Title", "4th Title", "5th title", "6th Title")
+
     // number of items
     override fun getItemCount(): Int {
-        return 4
+        return videoTitles.size
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomerViewHolder {
@@ -22,7 +24,7 @@ class MainAdapter : RecyclerView.Adapter<CustomerViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: CustomerViewHolder, position: Int) {
-        holder.view.textView_video_title.text = "123"
+        holder.view.textView_video_title.text = videoTitles.get(position)
 
     }
 
