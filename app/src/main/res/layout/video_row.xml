@@ -27,5 +27,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
+    <TextView
+        android:id="@+id/textView_channel_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Channel Name"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="@+id/textView_video_title"
+        app:layout_constraintStart_toStartOf="@+id/textView_video_title"
+        app:layout_constraintTop_toBottomOf="@+id/textView_video_title" />
+
 
 </android.support.constraint.ConstraintLayout>

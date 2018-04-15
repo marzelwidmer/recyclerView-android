@@ -4,8 +4,8 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.video_row.view.*
 import ch.keepcalm.recyclerview_android.homefeed.HomeFeed
+import kotlinx.android.synthetic.main.video_row.view.*
 
 class MainAdapter(val homeFeed: HomeFeed) : RecyclerView.Adapter<CustomerViewHolder>() {
 
@@ -27,7 +27,9 @@ class MainAdapter(val homeFeed: HomeFeed) : RecyclerView.Adapter<CustomerViewHol
 
     override fun onBindViewHolder(holder: CustomerViewHolder, position: Int) {
 //        holder.view.textView_video_title.text = videoTitles.get(position)
-        holder.view.textView_video_title.text = homeFeed.videos.get(position).name
+        val video = homeFeed.videos.get(position)
+        holder.view.textView_video_title.text = video.name
+        holder.view.textView_channel_name.text = video.channel.name
 
     }
 
