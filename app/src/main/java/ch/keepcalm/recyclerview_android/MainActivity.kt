@@ -3,6 +3,7 @@ package ch.keepcalm.recyclerview_android
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import ch.keepcalm.recyclerview_android.homefeed.HomeFeedClient
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -12,7 +13,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 //        recycleView_main.setBackgroundColor(Color.LTGRAY)
+
         recycleView_main.layoutManager = LinearLayoutManager(this)
-        recycleView_main.adapter =  MainAdapter()
+        recycleView_main.adapter = MainAdapter()
+
+        HomeFeedClient().fetchJson()
     }
+
+
 }
+
