@@ -25,8 +25,7 @@ class MainAdapter(val homeFeed: HomeFeed) : RecyclerView.Adapter<CustomerViewHol
     override fun onBindViewHolder(holder: CustomerViewHolder, position: Int) {
         val video = homeFeed.videos.get(position)
         holder.view.textView_video_title.text = video.name
-        holder.view.textView_channel_name.text =  "${video.channel.name} • ${video.numberOfViews} Views \n" +
-                "${video.channel.numberOfSubscribers} Channel subscribers"
+        holder.view.textView_channel_name.text =  "${video.channel.name} • ${video.numberOfViews} Views \n${video.channel.numberOfSubscribers} Channel subscribers"
 
         Picasso.get().load(video.imageUrl).into(holder.view.imageView_video_thumbnail)
         Picasso.get().load(video.channel.profileImageUrl).into(holder.view.imageView_channel_profile)
