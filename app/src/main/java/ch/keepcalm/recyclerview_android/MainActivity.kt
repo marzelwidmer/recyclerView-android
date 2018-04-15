@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
                 val gson = GsonBuilder().create()
                 val homeFeed = gson.fromJson(body, HomeFeed::class.java)
 
+                // android.view.ViewRootImpl$CalledFromWrongThreadException: Only the original thread that created a view hierarchy can touch its views.
                 runOnUiThread {
                     recycleView_main.adapter = MainAdapter(homeFeed)
                 }
