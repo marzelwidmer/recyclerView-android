@@ -1,7 +1,8 @@
-package ch.keepcalm.recyclerview_android.homefeed
+package ch.keepcalm.recyclerview_android
+
 
 /*
-videos": [
+"videos": [
     {
         "id": 1,
         "name": "Instagram Firebase - Learn How to Create Users, Follow, and Send Push Notifications",
@@ -12,9 +13,10 @@ videos": [
             "name": "Lets Build That App",
             "profileImageUrl": "https://letsbuildthatapp-videos.s3-us-west-2.amazonaws.com/dda5bc77-327f-4944-8f51-ba4f3651ffdf",
             "numberOfSubscribers": 100000
+        }
     }
 ]
 */
+class HomeFeed (val videos: List<Video>)
 class Video (val id: Int, val name: String, link: String, val imageUrl: String, val numberOfViews: Int, val channel: Channel)
-
-
+class Channel(val name: String, val profileImageUrl: String, val numberOfSubscribers: Int)
