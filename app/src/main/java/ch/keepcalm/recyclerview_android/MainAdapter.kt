@@ -4,15 +4,13 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.video_row.view.*
 
 class MainAdapter(val homeFeed: HomeFeed) : RecyclerView.Adapter<CustomerViewHolder>() {
 
-//    val videoTitles = arrayListOf("1st Title" , "2nd Title", "3rd Title", "4th Title", "5th title", "6th Title")
-
     // number of items
     override fun getItemCount(): Int {
-//        return videoTitles.size
         return homeFeed.videos.size
     }
 
@@ -25,10 +23,12 @@ class MainAdapter(val homeFeed: HomeFeed) : RecyclerView.Adapter<CustomerViewHol
     }
 
     override fun onBindViewHolder(holder: CustomerViewHolder, position: Int) {
-//        holder.view.textView_video_title.text = videoTitles.get(position)
         val video = homeFeed.videos.get(position)
         holder.view.textView_video_title.text = video.name
         holder.view.textView_channel_name.text = video.channel.name
+
+        Picasso.get().load(video.imageUrl).into(holder.view.imageView_video_thumbnail)
+        Picasso.get().load(video.channel.profileImageUrl).into(holder.view.imageView_channel_profile)
 
     }
 
