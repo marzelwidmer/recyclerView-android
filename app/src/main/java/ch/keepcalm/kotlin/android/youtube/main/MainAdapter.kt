@@ -33,17 +33,27 @@ class MainAdapter(val homeFeed: HomeFeed) : RecyclerView.Adapter<CustomerViewHol
         Picasso.get().load(video.imageUrl).into(holder.view.imageView_video_thumbnail)
         Picasso.get().load(video.channel.profileImageUrl).into(holder.view.imageView_channel_profile)
 
+        holder.video = video
+
     }
 
 
 }
 
-class CustomerViewHolder(val view: View) : RecyclerView.ViewHolder(view){
+class CustomerViewHolder(val view: View, var video: Video? = null) : RecyclerView.ViewHolder(view){
 
+    companion object {
+        val VIDEO_TITLE_KEY = "VIDEO_TITLE"
+    }
     init{
         view.setOnClickListener{
             val intent = Intent(view.context, CourseDetailActivity::class.java)
+
+            // change nav bar title
+            intent.putExtra(VIDEO_TITLE_KEY, video?.name)
+
             view.context.startActivity(intent)
+
         }
     }
 }
