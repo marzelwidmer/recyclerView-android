@@ -13,7 +13,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 //        recycleView_main.setBackgroundColor(Color.LTGRAY)
 
         recycleView_main.layoutManager = LinearLayoutManager(this)
