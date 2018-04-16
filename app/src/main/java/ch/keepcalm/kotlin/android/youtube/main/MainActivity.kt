@@ -14,14 +14,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//        recycleView_main.setBackgroundColor(Color.LTGRAY)
-
         recycleView_main.layoutManager = LinearLayoutManager(this)
 //        recycleView_main.adapter = MainAdapter()
         fetchJson()
     }
 
-    fun fetchJson() {
+    private fun fetchJson() {
         println("Attemping to Fetch JSON")
 
         val urlHomeFeed = "https://api.letsbuildthatapp.com/youtube/home_feed"

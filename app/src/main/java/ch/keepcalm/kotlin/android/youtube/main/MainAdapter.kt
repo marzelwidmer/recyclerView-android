@@ -44,6 +44,7 @@ class CustomerViewHolder(val view: View, var video: Video? = null) : RecyclerVie
 
     companion object {
         val VIDEO_TITLE_KEY = "VIDEO_TITLE"
+        val VIDEO_ID_KEY = "VIDEO_ID"
     }
     init{
         view.setOnClickListener{
@@ -51,6 +52,7 @@ class CustomerViewHolder(val view: View, var video: Video? = null) : RecyclerVie
 
             // change nav bar title
             intent.putExtra(VIDEO_TITLE_KEY, video?.name)
+            intent.putExtra(VIDEO_ID_KEY, video?.id.toString())
 
             view.context.startActivity(intent)
 
