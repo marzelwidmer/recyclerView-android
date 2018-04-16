@@ -1,10 +1,11 @@
-package ch.keepcalm.recyclerview_android
+package ch.keepcalm.kotlin.android.youtube.detail
 
 import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import ch.keepcalm.recyclerview_android.R
 
 class CourseDetailAdapter : RecyclerView.Adapter<CourseLessonViewHolder>() {
 

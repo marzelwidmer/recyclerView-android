@@ -1,10 +1,12 @@
-package ch.keepcalm.recyclerview_android
+package ch.keepcalm.kotlin.android.youtube.main
 
 import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import ch.keepcalm.kotlin.android.youtube.detail.CourseDetailActivity
+import ch.keepcalm.recyclerview_android.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.video_row.view.*
 
@@ -16,7 +18,7 @@ class MainAdapter(val homeFeed: HomeFeed) : RecyclerView.Adapter<CustomerViewHol
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomerViewHolder {
-        val layoutInflater = LayoutInflater.from(parent?.context)
+        val layoutInflater = LayoutInflater.from(parent.context)
         val cellForRow = layoutInflater.inflate(R.layout.video_row, parent, false)
 
         return CustomerViewHolder(cellForRow)
