@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import ch.keepcalm.kotlin.android.youtube.lesson.CourseLessonActivity
 import ch.keepcalm.kotlin.android.youtube.main.CourseLesson
 import ch.keepcalm.recyclerview_android.R
 import com.squareup.picasso.Picasso
@@ -33,25 +34,26 @@ class CourseDetailAdapter (val courseLessons: Array<CourseLesson>) : RecyclerVie
         holder.view.textView_course_lesson_detail.text = "Episode #${courseLesson.number}\n" +
                 "${courseLesson.duration}"
 
-
-
-//        holder.view.textView_video_title.text = video.name
-//        holder.view.textView_channel_name.text =  "${video.channel.name} • ${video.numberOfViews} Views \n${video.channel.numberOfSubscribers} Channel subscribers"
-
         Picasso.get().load(courseLesson.imageUrl).into(holder.view.imageView_course_lesson_thumbnail)
-//        Picasso.get().load(video.channel.profileImageUrl).into(holder.view.imageView_channel_profile)
 
-//        holder.video = video
+        holder?.courseLesson = courseLesson
+
     }
 
 
 }
 
-class CourseLessonViewHolder(val view: View) : RecyclerView.ViewHolder(view){
+class CourseLessonViewHolder(val view: View, var courseLesson: CourseLesson? = null) : RecyclerView.ViewHolder(view){
+
+    companion object {
+        val COURSE_LESSON_LINK_KEY = "COURSE_LESSON_LINK"
+    }
     init{
         view.setOnClickListener{
-            val intent = Intent(view.context, CourseDetailActivity::class.java)
+            val intent = Intent(view.context, CourseLessonActivity::class.java)
+            intent.putExtra(COURSE_LESSON_LINK_KEY, courseLesson?.link)
             view.context.startActivity(intent)
+
         }
     }
 }

@@ -28,6 +28,13 @@
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value="ch.keepcalm.kotlin.android.youtube.main.MainActivity"/>
         </activity>
+
+        <activity android:name="ch.keepcalm.kotlin.android.youtube.lesson.CourseLessonActivity"
+            android:label="Course Lesson"
+            android:launchMode="singleTop">
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value="ch.keepcalm.kotlin.android.youtube.detail.CourseDetailActivity"/>
+        </activity>
     </application>
 
 </manifest>
